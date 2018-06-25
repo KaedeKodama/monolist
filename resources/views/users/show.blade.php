@@ -26,5 +26,6 @@
         </div>
     </div>
     @include('items.items', ['items' => $items])
+    
     {!! $items->render() !!}
 @endsection

@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Item extends Model
-{
+class Have extends Model
+    {
     protected $fillable = ['code', 'name', 'url', 'image_url'];
 
     public function users()
@@ -13,11 +13,10 @@ class Item extends Model
         return $this->belongsToMany(User::class)->withPivot('type')->withTimestamps();
     }
 
-    public function want_users()
+    public function have_users()
     {
-        return $this->users()->where('type', 'want');
+        return $this->users()->where('type', 'have');
     }
 
+  }
 
-    
-}
